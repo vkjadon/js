@@ -1,15 +1,3 @@
-
-function sayMyName(){
-    console.log("H");
-    console.log("I");
-    console.log("T");
-    console.log("E");
-    console.log("S");
-    console.log("H");
-}
-
-// sayMyName()
-
 // function addTwoNumbers(number1, number2){
 
 //     console.log(number1 + number2);
@@ -35,8 +23,8 @@ function loginUserMessage(username = "sam"){
     return `${username} just logged in`
 }
 
-// console.log(loginUserMessage("hitesh"))
-// console.log(loginUserMessage("hitesh"))
+// console.log(loginUserMessage("Vijay"))
+// console.log(loginUserMessage("Vijay"))
 
 
 function calculateCartPrice(val1, val2, ...num1){
@@ -45,8 +33,8 @@ function calculateCartPrice(val1, val2, ...num1){
 
 // console.log(calculateCartPrice(200, 400, 500, 2000))
 
-const user = {
-    username: "hitesh",
+const userObject = {
+    username: "Vijay",
     prices: 199
 }
 
@@ -54,11 +42,12 @@ function handleObject(anyobject){
     console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
 }
 
-// handleObject(user)
-handleObject({
-    username: "sam",
-    price: 399
-})
+// handleObject(userObject)
+
+// handleObject({
+//     username: "sam",
+//     price: 399
+// })
 
 const myNewArray = [200, 400, 100, 600]
 
@@ -67,7 +56,7 @@ function returnSecondValue(getArray){
 }
 
 // console.log(returnSecondValue(myNewArray));
-console.log(returnSecondValue([200, 400, 500, 1000]));
+// console.log(returnSecondValue([200, 400, 500, 1000]));
 let a = 300
 if (true) {
     let a = 10
@@ -84,11 +73,11 @@ if (true) {
 
 
 function one(){
-    const username = "hitesh"
+    const username = "Vijay"
 
     function two(){
         const website = "youtube"
-        console.log(username);
+        // console.log(username);
     }
     // console.log(website);
 
@@ -99,8 +88,8 @@ function one(){
 // one()
 
 if (true) {
-    const username = "hitesh"
-    if (username === "hitesh") {
+    const username = "Vijay"
+    if (username === "Vijay") {
         const website = " youtube"
         // console.log(username + website);
     }
@@ -113,7 +102,7 @@ if (true) {
 // ++++++++++++++++++ interesting ++++++++++++++++++
 
 
-console.log(addone(5))
+// console.log(addone(5))
 
 function addone(num){
     return num + 1
@@ -121,44 +110,55 @@ function addone(num){
 
 
 
-addTwo(5)
-const addTwo = function(num){
-    return num + 2
+//addThree(5)
+
+const addThree = function(num){
+    return num + 3
 }
 
 const user = {
-    username: "hitesh",
+    username: "Vijay",
     price: 999,
 
     welcomeMessage: function() {
-        console.log(`${this.username} , welcome to website`);
+        console.log(`${user.username} , welcome to website`);
         console.log(this);
     }
 
 }
-
+/*
+Use `this` inside object methods instead of hardcoding the object name.
+If the variable (object) name `user` changes, this line would break.
+*/
 // user.welcomeMessage()
 // user.username = "sam"
 // user.welcomeMessage()
 
 // console.log(this);
 
-// function chai(){
-//     let username = "hitesh"
-//     console.log(this.username);
-// }
+// Run `console.log(this)` on browser -> the Global context is window()
 
-// chai()
-
-// const chai = function () {
-//     let username = "hitesh"
-//     console.log(this.username);
-// }
-
-const chai =  () => {
-    let username = "hitesh"
+function arrow(){
     console.log(this);
 }
+arrow()
+
+function arrow(){
+    let username = "Vijay"
+    console.log(this.username);
+}
+
+arrow()
+
+// const chai = function () {
+//     let username = "Vijay"
+//     console.log(this.username);
+// }
+
+// const chai =  () => {
+//     let username = "Vijay"
+//     console.log(this);
+// }
 
 
 // chai()
@@ -171,10 +171,10 @@ const chai =  () => {
 
 // const addTwo = (num1, num2) => ( num1 + num2 )
 
-const addTwo = (num1, num2) => ({username: "hitesh"})
+// const addTwo = (num1, num2) => ({username: "Vijay"})
 
 
-console.log(addTwo(3, 4))
+// console.log(addTwo(3, 4))
 
 
 // const myArray = [2, 5, 3, 7, 8]
@@ -184,11 +184,11 @@ console.log(addTwo(3, 4))
 // Immediately Invoked Function Expressions (IIFE)
 
 
-(function chai(){
-    // named IIFE
-    console.log(`DB CONNECTED`);
-})();
+// (function chai(){
+//     // named IIFE
+//     console.log(`DB CONNECTED`);
+// })();
 
-( (name) => {
-    console.log(`DB CONNECTED TWO ${name}`);
-} )('hitesh')
+// ( (name) => {
+//     console.log(`DB CONNECTED TWO ${name}`);
+// } )('Vijay')
