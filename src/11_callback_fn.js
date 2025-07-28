@@ -13,6 +13,11 @@ greet("Vijay", sayBye); // sayBye is the callback
 
 // anonymous function is a callback passed without function name.
 
+// Define the function that accepts a callback
+function sayHello(callback) {
+    callback("Vijay");
+}
+
 sayHello(function(name) {
     console.log("Hello, " + name);
 });
