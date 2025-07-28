@@ -28,25 +28,25 @@ let x = function printLanguage(lang){
 //     console.log(item, index, arr);
 // } )
 
-// const myCoding = [
-//     {
-//         languageName: "javascript",
-//         languageFileName: "js"
-//     },
-//     {
-//         languageName: "java",
-//         languageFileName: "java"
-//     },
-//     {
-//         languageName: "python",
-//         languageFileName: "py"
-//     },
-// ]
+const myCoding = [
+    {
+        languageName: "javascript",
+        languageFileName: "js"
+    },
+    {
+        languageName: "java",
+        languageFileName: "java"
+    },
+    {
+        languageName: "python",
+        languageFileName: "py"
+    },
+]
 
-// myCoding.forEach( (item) => {
+myCoding.forEach( (item) => {
     
-//     console.log(item.languageName);
-// } )
+    console.log(item.languageName);
+} )
 
 // const coding = ["js", "ruby", "java", "python", "cpp"]
 
