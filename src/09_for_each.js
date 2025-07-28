@@ -1,7 +1,9 @@
 const coding = ["js", "ruby", "java", "python", "cpp"]
 
-// forEach function requires a function to be run to process every value
+// forEach function requires a callback function to be run to process every value
 // The may be normal function or a arrow function in any form
+// A callback function is a function that is passed as an argument to another function, 
+// and is called (or "called back") later by that function.
 
 let x = function printLanguage(lang){
     console.log(lang);
