@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>An event in JavaScript is an action or occurrence that happens in the browser, which JavaScript can respond
+            to</p>
+
+        <ul>
+            <li>
+                <p>Clicking a button</p>
+            </li>
+            <li>
+                <p>Typing in a text box</p>
+            </li>
+            <li>
+                <p>Loading a page</p>
+            </li>
+            <li>
+                <p>Moving the mouse</p>
+            </li>
+            <li>
+                <p>Submitting a form</p>
+            </li>
+        </ul>
+    </div>
+
+    <button onclick="sayHello()">Click Me</button>
+    <button id="myBtn">Click Me - Event Listener</button>
+    <button id="myBtn2">Click Me - Event Properties</button>
+
+    <div><a href="https://google.com" id="myLink">Navigate to Google</a></div>
+
+    <div><a href="https://google.com" id="myLink2">Prevent Navigation</a></div>
+
+
+    <script>
+    // Store DOM elements in variables
+    const btn1 = document.getElementById("myBtn");
+    const btn2 = document.getElementById("myBtn2");
+    const link2 = document.getElementById("myLink2");
+
+    function sayHello() {
+      alert("Hello! You clicked the button.");
+    }
+
+    // Attach event listeners using variables
+    btn1.addEventListener("click", function () {
+      alert("Button was clicked using addEventListener!");
+    });
+
+    btn2.addEventListener("click", function (event) {
+      console.log("Event type:", event.type);
+      console.log("Target element:", event.target);
+      alert("You clicked: " + event.target.innerText);
+      console.log(event);
+    });
+
+    link2.addEventListener("click", function (event) {
+      event.preventDefault();
+      alert("Navigation stopped!");
+    });
+  </script>
+</body>
+
+</html>

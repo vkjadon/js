@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add & Remove Event Listeners</title>
+  <style>
+    #outer, #inner {
+      padding: 30px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #outer {
+      background-color: lightblue;
+    }
+
+    #inner {
+      background-color: lightgreen;
+    }
+
+    button {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Event Listener Management</h3>
+
+  <div id="outer">
+    Outer DIV
+    <div id="inner">
+      Inner DIV
+    </div>
+  </div>
+
+  <button id="stopBtn">Click Me - Stop Propagation</button>
+  <br>
+  <button id="removeBtn">🗑️ Remove All Listeners</button>
+  <button id="addBtn">➕ Add All Listeners</button>
+
+  <script>
+    // Grab DOM elements
+    const outer = document.getElementById("outer");
+    const inner = document.getElementById("inner");
+    const stopBtn = document.getElementById("stopBtn");
+    const removeBtn = document.getElementById("removeBtn");
+    const addBtn = document.getElementById("addBtn");
+
+    // Named handler functions
+    function captureOuter() {
+      alert("Captured by Outer DIV");
+    }
+
+    function bubbleOuter() {
+      alert("Bubbled to Outer DIV");
+    }
+
+    function clickInner() {
+      alert("Clicked Inner DIV (Target phase + bubbling next)");
+    }
+
+    function stopClick(event) {
+      event.stopPropagation();
+      alert("Button clicked — Event won't bubble or capture further.");
+    }
+
+    function bodyClick() {
+      console.log("Body clicked (bubbling)");
+    }
+
+    // Attach all listeners
+    function addAllListeners() {
+      outer.addEventListener("click", captureOuter, true); // Capturing
+      outer.addEventListener("click", bubbleOuter);        // Bubbling
+      inner.addEventListener("click", clickInner);
+      stopBtn.addEventListener("click", stopClick);
+      document.body.addEventListener("click", bodyClick);
+      alert("✅ All event listeners added.");
+    }
+
+    // Remove all listeners
+    function removeAllListeners() {
+      outer.removeEventListener("click", captureOuter, true);
+      outer.removeEventListener("click", bubbleOuter);
+      inner.removeEventListener("click", clickInner);
+      stopBtn.removeEventListener("click", stopClick);
+      document.body.removeEventListener("click", bodyClick);
+      alert("❌ All event listeners removed.");
+    }
+
+    // Button click handlers
+    removeBtn.addEventListener("click", removeAllListeners);
+    addBtn.addEventListener("click", addAllListeners);
+
+    // Initial setup: Add all listeners
+    addAllListeners();
+  </script>
+
+</body>
+</html>
